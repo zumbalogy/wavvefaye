@@ -12,3 +12,15 @@ Faye::WebSocket.load_adapter('thin')
 faye_server = Faye::RackAdapter.new(mount: '/faye', timeout: 45)
 
 run faye_server
+
+require 'rack/cors'
+use Rack::Cors do
+
+  # allow all origins in development
+  allow do
+    origins '*'
+    resource '*', 
+        :headers => :any, 
+        :methods => [:get, :post, :delete, :put, :options]
+  end
+end
