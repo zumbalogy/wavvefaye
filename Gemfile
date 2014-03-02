@@ -61,6 +61,7 @@ gem 'rack-ssl-enforcer', :require => 'rack/ssl-enforcer'
 
 gem 'rails_12factor', group: :production
 
+gem 'rack-cors', :require => 'rack/cors'
 
 group :development do
     gem 'pry'
